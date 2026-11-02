@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#faf6ed"><meta name="description" content="Explore an illustrated world of sliding word-search puzzles. Slide the letters, find the listed words, and lock them in."><title>Slide To Spell: Word Search</title>
+<link rel="icon" href="assets/app-icon.png"><link rel="apple-touch-icon" href="assets/app-icon.png"><meta name="apple-mobile-web-app-title" content="Slide To Spell"><link rel="preload" href="assets/fonts/BerkshireSwash-Regular.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="style.css?v=44"><link rel="stylesheet" href="rewards.css?v=62"><link rel="stylesheet" href="map-navigation.css?v=49"><script src="boards.js?v=45" defer></script><script src="engine.js?v=40" defer></script><script src="rewards.js?v=46" defer></script><script src="progress.js?v=46" defer></script><script src="worlds.js?v=40" defer></script><script src="journey.js?v=40" defer></script><script src="star-reveal.js?v=46" defer></script><script src="app.js?v=58" defer></script><script src="map-navigation.js?v=49" defer></script>
+</head>
+<body data-screen="home">
+<header class="site-header"><button class="brand brand-home" id="brand-home" aria-label="Home"><img src="assets/wordmark.webp" alt="Slide To Spell: Word Search"></button><div class="top-buttons"><button class="icon-button" id="game-menu" aria-label="Game Menu" title="Game Menu"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></header>
+<main class="layout">
+<section class="app-screen home-screen" id="home-screen" data-screen="home" aria-label="Home">
+<div class="home-content"><img class="home-wordmark" src="assets/wordmark.webp" alt="Slide To Spell: Word Search"><div class="home-actions"><button class="primary home-primary" id="home-continue" aria-label="Continue Level 1" hidden><span>Continue</span><span id="home-continue-level">Level 1</span></button><button class="primary home-primary" id="home-play">Play Level 1</button><button class="secondary" id="home-map">Level Map</button></div><nav class="home-links" aria-label="Game Information"><button id="home-help">How To Play</button><button id="home-settings"><svg class="home-settings-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2h4l.6 2.2 1.5.7 2.1-.8 1.7 1.7-.8 2.1.7 1.5L22 10v4l-2.2.6-.7 1.5.8 2.1-1.7 1.7-2.1-.8-1.5.7L14 22h-4l-.6-2.2-1.5-.7-2.1.8-1.7-1.7.8-2.1-.7-1.5L2 14v-4l2.2-.6.7-1.5-.8-2.1 1.7-1.7 2.1.8 1.5-.7Z"/><circle cx="12" cy="12" r="3.2"/></svg>Settings</button></nav></div>
+</section>
+<section class="app-screen map-screen" id="map-screen" data-screen="map" aria-labelledby="map-title" hidden>
+<header class="map-header"><button class="action-button map-home" id="map-home"><span aria-hidden="true">⌂</span> Home</button><div><h1 id="map-title" tabindex="-1">Level Map</h1><div class="map-star-total" id="map-star-total"></div></div><button class="icon-button" id="map-settings" aria-label="Settings" title="Settings">⚙</button></header><div class="map-scroll" id="map-scroll" tabindex="0" role="region" aria-label="Illustrated Level Map"><div class="map-journey" id="map-journey"></div></div><p class="map-status sr-only" id="map-status" role="status" aria-live="polite"></p>
+</section>
+<section class="game app-screen" id="game-screen" data-screen="game" aria-label="Sliding Word Search" hidden>
+<div class="game-top"><div class="level-summary"><div class="board-switch"><h1 id="puzzle-number">Level 1</h1></div><div class="round-stats"><div class="move-counter"><span class="stat-label">Moves</span><strong id="moves">0</strong></div></div><div class="star-thresholds" id="star-thresholds" aria-label="Move Thresholds For Each Star Rating"></div></div></div>
+<div class="target-area" id="target-area"><div class="target-bank" id="target-bank" aria-label="Words To Find"></div></div>
+<div class="play-area"><div class="board-frame" id="board-frame" aria-label="Letter Board"></div></div>
+<p id="message" class="sr-only" role="status" aria-live="polite"></p>
+<div class="game-actions"><button class="action-button" id="restart"><span aria-hidden="true">↻</span> Restart</button><button class="action-button results-button" id="view-results" hidden>View Results</button></div>
+</section>
+</main>
+<div class="board-feedback" id="board-feedback" aria-hidden="true" hidden></div>
+<dialog id="modal"><div class="modal-shell"><button class="modal-close icon-button" id="close-modal" aria-label="Close">×</button><div id="modal-content"></div></div></dialog>
+</body></html>
